@@ -1,51 +1,51 @@
 CREATE TABLE TB_CUST 
 (
-    CUST_ID VARCHAR2(10), --╟М╟╢ID
-    CUST_NM VARCHAR2(50), --╟М╟╢╦М
-    BIRTH_DT VARCHAR2(8), --╩Щюо
-    INST_DT VARCHAR2(8), --ют╥бюоюз
-    INST_ID VARCHAR2(10), --ют╥бюзID
-    INST_NM VARCHAR2(50) --ют╥бюз╦М
+    CUST_ID VARCHAR2(10), --ЙЁ═Й╟²ID
+    CUST_NM VARCHAR2(50), --ЙЁ═Й╟²К╙┘
+    BIRTH_DT VARCHAR2(8), --Л┐²Л²╪
+    INST_DT VARCHAR2(8), --Л·┘К═╔Л²╪Л·░
+    INST_ID VARCHAR2(10), --Л·┘К═╔Л·░ID
+    INST_NM VARCHAR2(50) --Л·┘К═╔Л·░К╙┘
 );
 
 CREATE TABLE TB_ORD
 (
-    ORD_NO VARCHAR2(15), --аж╧╝╧Ьхё
-    ORD_DT VARCHAR2(8), --аж╧╝юоюз
-    PRDT_CD VARCHAR2(6), --а╕г╟дз╣Е
-    ORD_AMT NUMBER(15), --аж╧╝╠щ╬в
-    DIS_AMT NUMBER(15), --грюн╠щ╬в
-    INST_DT VARCHAR2(8), --ют╥бюоюз
-    INST_ID VARCHAR2(10), --ют╥бюзID
-    INST_NM VARCHAR2(50), --ют╥бюз╦М
-    CUST_ID VARCHAR2(10) --╟М╟╢ID
+    ORD_NO VARCHAR2(15), --Лё╪К╛╦К╡┬М≤╦
+    ORD_DT VARCHAR2(8), --Лё╪К╛╦Л²╪Л·░
+    PRDT_CD VARCHAR2(6), --Л═°М▓┬Л╫■К⌠°
+    ORD_AMT NUMBER(15), --Лё╪К╛╦Й╦┬Л∙║
+    DIS_AMT NUMBER(15), --М∙═Л²╦Й╦┬Л∙║
+    INST_DT VARCHAR2(8), --Л·┘К═╔Л²╪Л·░
+    INST_ID VARCHAR2(10), --Л·┘К═╔Л·░ID
+    INST_NM VARCHAR2(50), --Л·┘К═╔Л·░К╙┘
+    CUST_ID VARCHAR2(10) --ЙЁ═Й╟²ID
 );
 
-INSERT INTO TB_CUST --╟М╟╢евюл╨М
+INSERT INTO TB_CUST --ЙЁ═Й╟²М┘▄Л²╢К╦■
 SELECT
-    LPAD(TO_CHAR(ROWNUM), 10, '0'), --╟М╟╢ID
-    DBMS_RANDOM.STRING('U', 10), --╟М╟╢╦М
-    TO_CHAR(SYSDATE-TRUNC(DBMS_RANDOM.VALUE(365,36500)), 'YYYYMMDD'), --╩Щюо
-    TO_CHAR(SYSDATE, 'YYYYMMDD'), --ют╥бюоюз
-    'DBMSEXPERT', --ют╥бюзID
-    'юл╟Ф©ю'  --ют╥бюз╦М
+    LPAD(TO_CHAR(ROWNUM), 10, '0'), --ЙЁ═Й╟²ID
+    DBMS_RANDOM.STRING('U', 10), --ЙЁ═Й╟²К╙┘
+    TO_CHAR(SYSDATE-TRUNC(DBMS_RANDOM.VALUE(365,36500)), 'YYYYMMDD'), --Л┐²Л²╪
+    TO_CHAR(SYSDATE, 'YYYYMMDD'), --Л·┘К═╔Л²╪Л·░
+    'DBMSEXPERT', --Л·┘К═╔Л·░ID
+    'Л²╢Й╡╫Л≤╓'  --Л·┘К═╔Л·░К╙┘
 FROM DUAL CONNECT BY LEVEL <= 1000000;
 
 COMMIT;
 
 ALTER TABLE TB_ORD NOLOGGING; 
 
-INSERT /*+ APPEND */ INTO TB_ORD --APPENDхЫф╝ ╩Г©К
+INSERT /*+ APPEND */ INTO TB_ORD --APPENDМ·▄М┼╦ Л┌╛Л ╘
 SELECT
-  LPAD(TO_CHAR(ROWNUM), 15, '0'),--аж╧╝╧Ьхё
-  TO_CHAR(SYSDATE-TRUNC(DBMS_RANDOM.VALUE(365,3650)), 'YYYYMMDD'), --аж╧╝юоюз
-  DBMS_RANDOM.STRING('X', 6), --а╕г╟дз╣Е
-  TRUNC(DBMS_RANDOM.VALUE(1000, 100000)), --аж╧╝╠щ╬в
-  TRUNC(DBMS_RANDOM.VALUE(100, 10000)), --грюн╠щ╬в
-  TO_CHAR(SYSDATE, 'YYYYMMDD'), --ют╥бюоюз
-  'DBMSEXPERT', --ют╥бюзID
-  'юл╟Ф©ю',  --ют╥бюз╦М
-  A.CUST_ID--╟М╟╢ID
+  LPAD(TO_CHAR(ROWNUM), 15, '0'),--Лё╪К╛╦К╡┬М≤╦
+  TO_CHAR(SYSDATE-TRUNC(DBMS_RANDOM.VALUE(365,3650)), 'YYYYMMDD'), --Лё╪К╛╦Л²╪Л·░
+  DBMS_RANDOM.STRING('X', 6), --Л═°М▓┬Л╫■К⌠°
+  TRUNC(DBMS_RANDOM.VALUE(1000, 100000)), --Лё╪К╛╦Й╦┬Л∙║
+  TRUNC(DBMS_RANDOM.VALUE(100, 10000)), --М∙═Л²╦Й╦┬Л∙║
+  TO_CHAR(SYSDATE, 'YYYYMMDD'), --Л·┘К═╔Л²╪Л·░
+  'DBMSEXPERT', --Л·┘К═╔Л·░ID
+  'Л²╢Й╡╫Л≤╓',  --Л·┘К═╔Л·░К╙┘
+  A.CUST_ID--ЙЁ═Й╟²ID
 FROM TB_CUST A, ( SELECT LEVEL FROM DUAL CONNECT BY LEVEL <= 10);
 
 COMMIT;
