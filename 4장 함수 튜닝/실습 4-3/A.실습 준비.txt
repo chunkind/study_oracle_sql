@@ -1,11 +1,11 @@
 CREATE TABLE TB_EMP
 (
-    EMP_NO VARCHAR2(10), --»ç¿ø¹øÈ£
-    EMP_NM VARCHAR2(50), --»ç¿ø¸í
-    JOB_CD VARCHAR2(6), --Á÷¾÷ÄÚµå
-    JOIN_DT VARCHAR2(8), --ÀÔ»çÀÏÀÚ
-    SAL NUMBER(15), --±Þ¿©
-    DEPT_NO VARCHAR2(6) --ºÎ¼­¹øÈ£
+    EMP_NO VARCHAR2(10), --ì‚¬ì›ë²ˆí˜¸
+    EMP_NM VARCHAR2(50), --ì‚¬ì›ëª…
+    JOB_CD VARCHAR2(6), --ì§ì—…ì½”ë“œ
+    JOIN_DT VARCHAR2(8), --ìž…ì‚¬ì¼ìž
+    SAL NUMBER(15), --ê¸‰ì—¬
+    DEPT_NO VARCHAR2(6) --ë¶€ì„œë²ˆí˜¸
 );
 
 INSERT INTO TB_EMP

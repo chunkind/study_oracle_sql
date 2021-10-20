@@ -1,7 +1,7 @@
 CREATE TABLE TB_ORD_DAY
 (
-    ORD_DT VARCHAR2(8), --аж╧╝юоюз
-    ORD_NO VARCHAR2(10) --аж╧╝╧Ьхё
+    ORD_DT VARCHAR2(8), --Лё╪К╛╦Л²╪Л·░
+    ORD_NO VARCHAR2(10) --Лё╪К╛╦К╡┬М≤╦
 );
 
 ALTER TABLE TB_ORD_DAY NOLOGGING;

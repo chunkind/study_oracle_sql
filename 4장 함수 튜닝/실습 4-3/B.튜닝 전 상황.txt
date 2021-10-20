@@ -2,15 +2,15 @@ SELECT
   A.*,
   CASE
     WHEN A.EMP_CNT BETWEEN 0 AND 5 
-     THEN '5╦М юлго'
+     THEN '5К╙┘ Л²╢М∙≤'
     WHEN A.EMP_CNT BETWEEN 6 AND 10 
-     THEN '10╦М юлго'
+     THEN '10К╙┘ Л²╢М∙≤'
     WHEN A.EMP_CNT BETWEEN 11 AND 100 
-     THEN '100╦М юлго'
+     THEN '100К╙┘ Л²╢М∙≤'
     WHEN A.EMP_CNT BETWEEN 101 AND 1000 
-     THEN '1000╦М юлго'
-    ELSE '1000╦М цй╟З'
-  END AS ╪р╪с╨н╪╜╩Г©Ь╪Ж
+     THEN '1000К╙┘ Л²╢М∙≤'
+    ELSE '1000К╙┘ Л╢┬ЙЁ╪'
+  END AS Л├▄Л├█К╤─Л└°Л┌╛Л⌡░Л┬≤
 FROM
   (SELECT
      EMP_NO, 
